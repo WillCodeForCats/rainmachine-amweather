@@ -5,11 +5,11 @@
 #
 # Author: Seth Mattinen <seth@mattinen.org>
 #
-# Tested with weather stations:
-#   * WS-2000 with Osprey sensor array
-#
 # 20190324:
 #   - first version using data from a WS-2000 with Osprey sensor array
+#
+# LICENSE: GNU General Public License v3.0
+# GitHub: https://github.com/WillCodeForCats/rainmachine-amweather
 #
 
 from RMParserFramework.rmParser import RMParser
@@ -32,7 +32,6 @@ class AmbientWeatherParser(RMParser):
         , "macAddress": None}
 
     def perform(self):
-        # https://api.ambientweather.net/v1/devices/macAddress?apiKey=&applicationKey=&endDate=&limit=288
         url = 'https://api.ambientweather.net/v1/devices/' + str(self.params["macAddress"])
         parameterList = [("apiKey", str(self.params["apiKey"]))
             , ("applicationKey", str(self.params["applicationKey"]))
