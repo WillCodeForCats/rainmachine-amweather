@@ -15,10 +15,7 @@
 from RMParserFramework.rmParser import RMParser
 from RMUtilsFramework.rmLogging import log
 from RMUtilsFramework.rmUtils import convertFahrenheitToCelsius,convertInchesToMM,convertRadiationFromWattsToMegaJoules
-from RMUtilsFramework.rmTimeUtils import rmNormalizeTimestamp, rmTimestampToDate
-from RMDataFramework.rmUserSettings import globalSettings
 import json
-
 
 
 class AmbientWeatherParser(RMParser):
@@ -80,8 +77,3 @@ class AmbientWeatherParser(RMParser):
                 dewpoint = convertFahrenheitToCelsius(entry["dewPoint"])
                 self.addValue(RMParser.dataType.DEWPOINT, dateutc, dewpoint, False)
         return True
-
-
-if __name__ == "__main__":
-    p = AmbientWeatherParser()
-    p.perform()
