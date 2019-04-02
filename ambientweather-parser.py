@@ -64,10 +64,14 @@ class AmbientWeatherParser(RMParser):
                 solarrad = convertRadiationFromWattsToMegaJoules(entry["solarradiation"])
                 self.addValue(RMParser.dataType.SOLARRADIATION, dateutc, solarrad, False)
             
-            if 'hourlyrainin' in entry:
-                rain = convertInchesToMM(entry["hourlyrainin"])
+            if 'dailyrainin' in entry:
+                rain = convertInchesToMM(entry["dailyrainin"])
                 self.addValue(RMParser.dataType.RAIN, dateutc, rain, False)
-            
+
+            #if 'hourlyrainin' in entry:
+            #    rain = convertInchesToMM(entry["hourlyrainin"])
+            #    self.addValue(RMParser.dataType.RAIN, dateutc, rain, False)
+
             if 'baromrelin' in entry:
                 pressure = entry["baromrelin"] * 3.38639  # to kPa
                 self.addValue(RMParser.dataType.PRESSURE, dateutc, pressure, False)
