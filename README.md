@@ -25,6 +25,14 @@ Upload the parser to your RainMachine at Settings -> Weather the click "Add New"
 
 If there's a problem check under About -> VIEW LOG and see if there's an error. It logs as "user-ambientweather-parser".
 
+## Potential Install Issues
+There have been reports of the RainMachine rejecting a parser uploads with syntax issues on Windows.
+- First: There's a fix in firmware version 4.0.989 for the Mini-8 and version 4.0.1115 for the Touch HD.
+I developed this on a Mac so I didn't come across the upload issue with firmware v4.0.974.
+- Second: Save the "raw" file or download the release ZIP file.
+
+RAW: https://raw.githubusercontent.com/WillCodeForCats/rainmachine-amweather/master/ambientweather-parser.py
+
 ## FUTURE WORK
 Ambient Weather does have a LAN-based receiver, which at some point I may look into how to poll data directly
 from that and avoid any reliance on "the cloud" or internet access. But until that happens the ambientweather.net
