@@ -41,7 +41,6 @@ class AmbientWeatherParser(RMParser):
         data = self.openURL(url, parameterList)
 
         if data is None:
-            self.lastKnownError = "Error: No data received from server"
             log.error(self.lastKnownError)
             return
 
