@@ -25,6 +25,9 @@ Upload the parser to your RainMachine at Settings -> Weather the click "Add New"
 
 If there's a problem check under About -> VIEW LOG and see if there's an error. It logs as "user-ambientweather-parser".
 
+To log station data when it runs, change your log level to "Debug" under Settings -> System Settings in the
+Advanced Settings section. Don't forget to change it back beucase it logs a lot of stuff from other parsers too.
+
 ## Potential Install Issues
 There have been reports of the RainMachine rejecting a parser uploads with syntax issues on Windows.
 - First: There's a fix in firmware version 4.0.989 for the Mini-8 and version 4.0.1115 for the Touch HD.
