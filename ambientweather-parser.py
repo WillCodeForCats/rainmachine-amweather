@@ -25,7 +25,7 @@ from RMParserFramework.rmParser import RMParser
 from RMUtilsFramework.rmLogging import log
 from RMUtilsFramework.rmUtils import convertFahrenheitToCelsius,convertInchesToMM,convertRadiationFromWattsToMegaJoules
 import json
-import urllib2, ssl
+import urllib, urllib2, ssl
 
 class AmbientWeatherParser(RMParser):
     parserName = "Ambient Weather Network Parser"
