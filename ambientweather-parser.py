@@ -23,7 +23,7 @@
 
 from RMParserFramework.rmParser import RMParser
 from RMUtilsFramework.rmLogging import log
-from RMUtilsFramework.rmUtils import convertFahrenheitToCelsius,convertInchesToMM,convertRadiationFromWattsToMegaJoules
+from RMUtilsFramework.rmUtils import convertFahrenheitToCelsius,convertInchesToMM
 import json
 import urllib, urllib2, ssl
 
@@ -93,7 +93,7 @@ class AmbientWeatherParser(RMParser):
                 self.paserHasData = True
             
             if 'solarradiation' in entry:
-                solarrad = convertRadiationFromWattsToMegaJoules(entry["solarradiation"])
+                solarrad = self.convertRadiationFromWattsToMegaJoules(entry["solarradiation"])
                 self.addValue(RMParser.dataType.SOLARRADIATION, dateutc, solarrad, False)
                 log.debug("SOLARRADIATION = %s" % (solarrad))
                 self.paserHasData = True
@@ -123,4 +123,12 @@ class AmbientWeatherParser(RMParser):
             self.lastKnownError = "No Data From Station"
             log.error("Connected, but no data returned from station %s" % (str(self.params["macAddress"])))
             return
-            
+
+    # Function to convert radiation to MJ/day
+    def convertRadiationFromWattsToMegaJoules(self, radiation):
+        try:
+         radiation = float(radiation)
+         return radiation * 0.0864
+        except:
+            pass
+        return None
