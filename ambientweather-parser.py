@@ -5,6 +5,8 @@
 #
 # Author: Seth Mattinen <seth@mattinen.org>
 # 
+# 20210717
+#   - Changed interval to every 6 hours to match other parsers.
 # 20200407
 #   - Additional logging and checks
 # 20200405:
@@ -29,12 +31,12 @@ import urllib, urllib2, ssl
 
 class AmbientWeatherParser(RMParser):
     parserName = "Ambient Weather Network Parser"
-    parserDescription = "Live personal weather station data from www.ambientweather.net"
+    parserDescription = "Personal weather station data from www.ambientweather.net"
     parserForecast = False
     parserHistorical = True
     parserEnabled = False
     parserDebug = False
-    parserInterval = 60 * 60  # hourly
+    parserInterval = 60 * 60 * 6  # every 6 hours
     paserHasData = False
 
     params = {"apiKey": None
