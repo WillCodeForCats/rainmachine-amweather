@@ -1,3 +1,5 @@
+# NOTICE: The RainMachine product line appears to be dead. I have since migrated to OpenSprinkler and no longer have a RainMachine to develop or test this code.
+
 # rainmachine-amweather
 Personal weather station parser from the Ambient Weather Network for the RainMachine sprinkler controller.
 
